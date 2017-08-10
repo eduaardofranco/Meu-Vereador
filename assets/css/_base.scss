@@ -1,0 +1,21 @@
+.peace-font {
+    font-family: 'Peace Sans';
+}
+.roboto-font {
+    font-family: 'Roboto';
+}
+.center {
+    @include translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.clearfix {
+    zoom: 1;
+}
+.clearfix::before, .clearfix::after {
+    content: '';
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}

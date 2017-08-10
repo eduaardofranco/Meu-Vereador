@@ -1,0 +1,76 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M713.12 491.168l-201.12 198.24-201.12-198.272c-12.608-12.512-33.088-12.512-45.696 0s-12.608 32.768 0 45.248l223.968 220.768c12.128 12 33.536 12.064 45.728 0l223.968-220.8c12.608-12.48 12.608-32.768 0-45.248-12.64-12.448-33.12-12.448-45.728 0.064z",
+          "M489.152 533.184c12.128 12 33.536 12.064 45.728 0l223.968-220.768c12.608-12.512 12.608-32.768 0-45.248-12.608-12.512-33.088-12.512-45.696 0l-201.152 198.24-201.12-198.24c-12.608-12.512-33.088-12.512-45.696 0s-12.608 32.768 0 45.248l223.968 220.768z"
+        ],
+        "attrs": [
+          {},
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "if_DoubleChevronDown_1031525"
+        ]
+      },
+      "attrs": [
+        {},
+        {}
+      ],
+      "properties": {
+        "order": 2,
+        "id": 0,
+        "name": "scroll",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon",
+        "majorVersion": 1,
+        "minorVersion": 0
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false,
+      "showSelector": false,
+      "showMetrics": false,
+      "showMetadata": false,
+      "showVersion": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16
+  }
+}

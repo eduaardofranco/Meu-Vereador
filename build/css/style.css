@@ -1,0 +1,257 @@
+@import url(../../assets/icons/style.css);
+@import url(../../assets/fonts/stylesheet.css);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, input, figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+a {
+  text-decoration: none; }
+  a:visited {
+    color: #000; }
+
+/* Reset `button` and button-style `input` default styles */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  line-height: normal;
+  padding: 0;
+  -webkit-appearance: button;
+  /* for input */
+  -webkit-user-select: none;
+  /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.peace-font, .cover-container__title {
+  font-family: 'Peace Sans'; }
+
+.roboto-font, body {
+  font-family: 'Roboto'; }
+
+.center, .cover-container__scroll i {
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  top: 50%; }
+
+.clearfix {
+  zoom: 1; }
+
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  color: #2f2f2f;
+  overflow-x: hidden;
+  width: 100%; }
+
+.cover-container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw; }
+  .cover-container__title {
+    color: #ffffff;
+    display: block;
+    font-size: 4em;
+    padding: 10% 0 0 5%;
+    text-shadow: 3px 3px 3px black; }
+    .cover-container__title::after {
+      background: url(../../assets/images/man.png) no-repeat center;
+      content: '';
+      display: inline-block;
+      height: 129px;
+      width: 40px; }
+  .cover-container__item {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: url(../../assets/images/cover2.jpg) no-repeat center;
+    display: block;
+    height: 100%;
+    height: 100%;
+    /* parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+    .cover-container__item.opacity-cover::before {
+      opacity: .3;
+      visibility: visible; }
+    .cover-container__item::before {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      background: #000000;
+      /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(#ffffff, #000000);
+      /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(#ffffff, #000000);
+      /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(#ffffff, #000000);
+      /* For Firefox 3.6 to 15 */
+      background: linear-gradient(#ffffff, #000000);
+      /* Standard syntax */
+      content: '';
+      display: block;
+      opacity: 0;
+      position: absolute;
+      visibility: hidden;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%; }
+
+.cover-container__scroll {
+  -moz-transform: translateX(-50%) translateY(0);
+  -webkit-transform: translateX(-50%) translateY(0);
+  -o-transform: translateX(-50%) translateY(0);
+  -ms-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
+  -webkit-border-radius: 100% 100% 100% 100%;
+  border-radius: 100% 100% 100% 100%;
+  animation: bounce 1s infinite ease-in-out;
+  background: #ffffff;
+  cursor: pointer;
+  display: block;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px; }
+  .cover-container__scroll i {
+    display: block;
+    font-size: 25px;
+    position: absolute; }
+
+.content {
+  margin: 2% auto;
+  width: 85%; }
+
+.vereador {
+  position: relative; }
+  .vereador .desc {
+    -moz-transform: translateX(0) translateY(-50%);
+    -webkit-transform: translateX(0) translateY(-50%);
+    -o-transform: translateX(0) translateY(-50%);
+    -ms-transform: translateX(0) translateY(-50%);
+    transform: translateX(0) translateY(-50%);
+    position: absolute;
+    top: 50%; }
+  .vereador__left {
+    float: left;
+    padding: 0 20px;
+    text-align: center;
+    width: 50%; }
+  .vereador__right {
+    float: left;
+    padding: 0 20px;
+    position: relative;
+    width: 50%; }
+  .vereador__name {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: #2f2f2f;
+    font-size: 5em;
+    margin-bottom: 5%;
+    position: relative; }
+    .vereador__name::before {
+      background: rgba(0, 0, 0, 0.7);
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 2px;
+      width: 50px; }
+  .vereador__text::first-letter {
+    font-size: 25px; }
+  .vereador__text p {
+    font-size: 16px;
+    line-height: 25px; }
+    .vereador__text p + p {
+      margin-top: 3%; }
+
+.btn-more {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #2f2f2f;
+  display: inline-block;
+  font-size: 15px;
+  margin-top: 25px;
+  padding: 10px 30px; }
+
+@keyframes bounce {
+  0% {
+    bottom: 20px; }
+  50% {
+    bottom: 25px; }
+  100% {
+    bottom: 20px; } }

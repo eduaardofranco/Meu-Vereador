@@ -1,0 +1,172 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    @extend .roboto-font;
+    color: $black2;
+    overflow-x: hidden;
+    width: 100%;
+}
+// .header {
+//     background: rgba($white, .8);
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 35px;
+//     width: 100%;
+//     z-index: 10;
+// }
+.cover-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    &__title {
+        @extend .peace-font;
+        color: $white;
+        display: block;
+        font-size: 4em;
+        padding: 10% 0 0 5%;
+        text-shadow: 3px 3px 3px rgba(0,0,0, 1);
+        &::after{
+            background: url(#{$images}man.png) no-repeat center;
+            content: '';
+            display: inline-block;
+            height: 129px;
+            width: 40px;;
+        };
+    }
+    &__item {
+        @include scale(1.1);
+        @include transition(.3s,ease-in-out);
+        background: url(#{$images}cover2.jpg) no-repeat center;
+        display: block;
+        height: 100%;
+        height: 100%;
+        /* parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &.opacity-cover {
+            &::before {
+                opacity: .3;
+                visibility: visible;
+            }
+        }
+        &::before {
+            @include transition(.3s,ease);
+            background: $black; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient($white,$black); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient($white,$black); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient($white,$black); /* For Firefox 3.6 to 15 */
+            background: linear-gradient($white,$black); /* Standard syntax */
+            content: '';
+            display: block;
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}//cover
+.cover-container__scroll {
+    @include translate(-50%,0);
+    @include radius(100%,100%,100%,100%);
+    animation: bounce 1s infinite ease-in-out;
+    background: $white;
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    i {
+        @extend .center;
+        display: block;
+        font-size: 25px;
+        position: absolute;
+    }
+}
+.content {
+    margin: 2% auto;
+    width: 85%;
+}
+.vereador {
+    position: relative;
+    .desc {
+        @include translate(0,-50%);
+        position: absolute;
+        top: 50%;
+
+    }
+    &__left {
+        float: left;
+        padding: 0 20px;
+        text-align: center;
+        width: 50%;
+    }
+    &__right {
+        float: left;
+        padding: 0 20px;
+        position: relative;
+        width: 50%;
+    }
+    &__name {
+        border-bottom: 1px  solid rgba(0,0,0, .1);
+        color: $black2;
+        font-size: 5em;
+        margin-bottom: 5%;
+        position: relative;
+        &::before {
+            background: rgba(0,0,0, .7);
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 2px;
+            width: 50px;
+        }
+    }//name
+    &__text {
+        &::first-letter {
+            font-size: 25px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 25px;
+            & + p{
+                margin-top: 3%;
+            }
+        }
+    }
+}//.vereador
+.btn-more {
+    @include transition(.5s,ease-in-out);
+    border: 1px solid $black2;
+    display: inline-block;
+    font-size: 15px;
+    margin-top: 25px;
+    padding: 10px 30px;
+}
+
+
+
+//@keyframes
+@keyframes bounce {
+    0% {
+        bottom: 20px;
+    }
+    50% {
+        bottom: 25px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
