@@ -1,7 +1,7 @@
 {
   "name": "Workflow",
   "version": "1.0.0",
-  "description": "Natura Workflow",
+  "description": "Vereadores Workflow",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "gulp-wait": "0.0.2"
   }
 }

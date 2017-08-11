@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	notify = require('gulp-notify'),
 	plumber = require('gulp-plumber'),
+	wait = require('gulp-wait'),
 	sassDir = './assets/css/**/*';
 
 // compile sass to .css
@@ -26,6 +27,7 @@ gulp.task('sass', function() {
 
 	// return gulp.src('assets/css/*.scss')
 	return gulp.src(sassDir)
+	.pipe(wait(500))
 	.pipe(plumber({errorHandler: onError}))
 	.pipe(sass())
 	.pipe(rename('style.css'))
