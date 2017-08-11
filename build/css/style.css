@@ -47,9 +47,10 @@ blockquote, q {
   quotes: "" ""; }
 
 a {
+  color: #2f2f2f;
   text-decoration: none; }
   a:visited {
-    color: #000; }
+    color: #2f2f2f; }
 
 /* Reset `button` and button-style `input` default styles */
 input[type="submit"],
@@ -98,6 +99,7 @@ button {
 
 body {
   color: #2f2f2f;
+  font-size: 14px;
   overflow-x: hidden;
   width: 100%; }
 
@@ -112,6 +114,40 @@ body {
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555; }
+
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: .7% 2%; }
+  .header a {
+    position: relative; }
+    .header a:hover::before {
+      width: 100%; }
+    .header a::before {
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      background: rgba(47, 47, 47, 0.5);
+      bottom: -2px;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      height: 1px;
+      width: 0; }
+  .header .icon-back {
+    margin-right: 5px;
+    vertical-align: middle; }
+
+.footer-container {
+  background: #2f2f2f;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  padding: .5% 0; }
+  .footer-container a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline; }
 
 .cover-container {
   position: relative;
@@ -208,10 +244,12 @@ body {
     position: absolute; }
 
 .content {
-  margin: 2% auto;
+  margin-right: auto;
+  margin-left: auto;
   width: 85%; }
 
 .vereador {
+  padding: 2% 0;
   position: relative; }
   .vereador__img {
     max-width: 100%; }
@@ -269,6 +307,8 @@ body {
   text-align: center;
   height: auto;
   width: 50%; }
+  .line--big {
+    width: 90%; }
   .line::before, .line::after {
     background: rgba(47, 47, 47, 0.3);
     content: '';

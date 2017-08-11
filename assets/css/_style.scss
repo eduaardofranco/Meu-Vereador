@@ -4,6 +4,7 @@
 body {
     @extend .roboto-font;
     color: $black2;
+    font-size: 14px;
     overflow-x: hidden;
     width: 100%;
 }
@@ -23,7 +24,50 @@ body {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
-// cover top style
+//header
+.header {
+    border-bottom: 1px solid rgba(0,0,0, .1);
+    padding: .7% 2%;
+    a{
+        position: relative;
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+        &::before {
+            @include transition(.5s, ease-in-out);
+            background: rgba($black2, .5);
+            bottom: -2px;
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+            height: 1px;
+            width: 0;
+        }
+    }
+    .icon-back {
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+//header end
+
+//footer
+.footer-container {
+    background: rgba($black2, 1);
+    color: rgba($white, .8);
+    font-size: 1em;
+    padding: .5% 0;
+    a{
+        color: rgba($white, .8);
+        text-decoration: underline;
+    }
+}
+// footer end
+
+// cover top
 .cover-container {
     position: relative;
     overflow: hidden;
@@ -81,7 +125,7 @@ body {
             width: 100%;
         }
     }
-}//cover
+}//cover end
 
 .cover-container__scroll {
     @include translate(-50%,0);
@@ -103,16 +147,13 @@ body {
     }
 }
 .content {
-    margin: 2% auto;
+    margin-right: auto;
+    margin-left: auto;
     width: 85%;
 }
 .vereador {
+    padding: 2% 0;
     position: relative;
-    .desc {
-        // @include translate(0,-50%);
-        // position: absolute;
-        // top: 50%;
-    }
     &__img {
         max-width: 100%;
     }
@@ -176,6 +217,9 @@ body {
     text-align: center;
     height: auto;
     width: 50%;
+    &--big {
+        width: 90%;
+    }
     &::before, &::after {
         background: rgba($black2, .3);
         content: '';
