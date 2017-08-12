@@ -23,3 +23,7 @@
     -ms-transform: scale($t);
     transform: scale($t);
 }
+@mixin grayscale($g) {
+    -webkit-filter: grayscale($g); /* Safari */
+    filter: grayscale($g);
+}

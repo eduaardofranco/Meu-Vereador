@@ -85,7 +85,7 @@ body {
             content: '';
             display: inline-block;
             height: 129px;
-            width: 40px;;
+            width: 40px;
         };
     }
     &__item {
@@ -151,8 +151,63 @@ body {
     margin-left: auto;
     width: 85%;
 }
-.vereador {
+.section {
     padding: 2% 0;
+}
+.title-page {
+    border-bottom: 1px  solid rgba(0,0,0, .1);
+    color: $black2;
+    font-size: 3em;
+    margin-bottom: 5%;
+    position: relative;
+    &::before {
+        background: rgba(0,0,0, .7);
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 2px;
+        width: 50px;
+    }
+}
+.list-vereadores {
+    text-align: center;
+}
+.team-member {
+    display: inline-block;
+    margin: 1.5%;
+    width: 30%;
+    &:hover {
+        .team-member-image {
+            @include grayscale(40%);
+        }
+    }
+    &-image {
+        @include transition(.3s, ease-in-out);
+        @include radius(15px,15px,15px,15px);
+        max-width: 100%;
+    }
+    h2 {
+        font-size: 1.2em;
+        display: inline-block;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .job {
+        display: inline-block;
+        color: rgba($black2, .6);
+        font-size: 1em;
+    }
+    &__projects {
+        margin-top: 10px;
+    }
+    figure {
+        overflow: hidden;
+        text-align: center;
+    }
+}
+.vereador {
     position: relative;
     &__img {
         max-width: 100%;
@@ -169,23 +224,6 @@ body {
         position: relative;
         width: 50%;
     }
-    &__name {
-        border-bottom: 1px  solid rgba(0,0,0, .1);
-        color: $black2;
-        font-size: 4em;
-        margin-bottom: 5%;
-        position: relative;
-        &::before {
-            background: rgba(0,0,0, .7);
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            height: 2px;
-            width: 50px;
-        }
-    }//name
     &__text {
         &::first-letter {
             font-size: 25px;

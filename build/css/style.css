@@ -248,8 +248,61 @@ body {
   margin-left: auto;
   width: 85%; }
 
+.section {
+  padding: 2% 0; }
+
+.title-page {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #2f2f2f;
+  font-size: 3em;
+  margin-bottom: 5%;
+  position: relative; }
+  .title-page::before {
+    background: rgba(0, 0, 0, 0.7);
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    width: 50px; }
+
+.list-vereadores {
+  text-align: center; }
+
+.team-member {
+  display: inline-block;
+  margin: 1.5%;
+  width: 30%; }
+  .team-member:hover .team-member-image {
+    -webkit-filter: grayscale(40%);
+    /* Safari */
+    filter: grayscale(40%); }
+  .team-member-image {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    max-width: 100%; }
+  .team-member h2 {
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center; }
+  .team-member .job {
+    display: inline-block;
+    color: rgba(47, 47, 47, 0.6);
+    font-size: 1em; }
+  .team-member__projects {
+    margin-top: 10px; }
+  .team-member figure {
+    overflow: hidden;
+    text-align: center; }
+
 .vereador {
-  padding: 2% 0;
   position: relative; }
   .vereador__img {
     max-width: 100%; }
@@ -263,21 +316,6 @@ body {
     padding: 0 20px;
     position: relative;
     width: 50%; }
-  .vereador__name {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: #2f2f2f;
-    font-size: 4em;
-    margin-bottom: 5%;
-    position: relative; }
-    .vereador__name::before {
-      background: rgba(0, 0, 0, 0.7);
-      content: '';
-      display: block;
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      height: 2px;
-      width: 50px; }
   .vereador__text::first-letter {
     font-size: 25px; }
   .vereador__text p {
