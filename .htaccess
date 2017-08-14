@@ -1,6 +1,0 @@
-#Options +FollowSymlinks
-RewriteEngine On
-RewriteRule    ^/([0-9A-Za-z]+)/?$    users/index.php?name=$1    [NC,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-ErrorDocument 404 http://localhost/movies/error404.html
