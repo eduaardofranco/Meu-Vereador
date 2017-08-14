@@ -3,6 +3,7 @@
 }
 body {
     @extend .roboto-font;
+    background: #f8f8f8;
     color: $black2;
     font-size: 14px;
     overflow-x: hidden;
@@ -158,7 +159,7 @@ body {
     border-bottom: 1px  solid rgba(0,0,0, .1);
     color: $black2;
     font-size: 3em;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
     position: relative;
     &::before {
         background: rgba(0,0,0, .7);
@@ -171,33 +172,38 @@ body {
         width: 50px;
     }
 }
+.title-sec {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
 .list-vereadores {
     text-align: center;
 }
-.team-member {
+.item-vereador {
     display: inline-block;
     margin: 1.5%;
     width: 30%;
     &:hover {
-        .team-member-image {
+        .item-vereador__image {
             @include grayscale(40%);
         }
     }
-    &-image {
+    &__image {
         @include transition(.3s, ease-in-out);
         @include radius(15px,15px,15px,15px);
         max-width: 100%;
     }
-    h2 {
+    &__name {
         font-size: 1.2em;
         display: inline-block;
         margin-top: 10px;
         text-align: center;
     }
-    .job {
+    &__party {
         display: inline-block;
         color: rgba($black2, .6);
-        font-size: 1em;
+        font-size: .8em;
     }
     &__projects {
         margin-top: 10px;
@@ -209,34 +215,70 @@ body {
 }
 .vereador {
     position: relative;
+    &__email,
+    &__phone {
+        font-size: 1.1em;
+        margin-top: 3%;
+        i {
+            vertical-align: middle;
+        }
+    }
     &__img {
         max-width: 100%;
     }
     &__left {
         float: left;
-        padding: 0 20px;
+        padding: 0 10px 10px 10px;
         text-align: center;
         width: 50%;
     }
-    &__right {
+    &__name {
         float: left;
-        padding: 0 20px;
-        position: relative;
         width: 50%;
     }
     &__text {
         &::first-letter {
             font-size: 25px;
         }
-        p {
+        p,
+        div {
             font-size: 16px;
             line-height: 25px;
-            & + p{
+            & + p,
+            & + div{
                 margin-top: 3%;
             }
         }
     }
 }//.vereador
+
+.news {
+    clear: both;
+    padding-top: 3%;
+    &__list {
+        li {
+            padding-left: 25px;
+            position: relative;
+            i {
+                display: block;
+                font-size: 1.5em;
+                position: absolute;
+                top: 15%;
+                left: 0;
+            }
+            &+ li{
+                margin-top: 1.5%;
+            }
+        }
+        strong {
+            display: block;
+            font-size: .9em;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+    }//.newsList
+}//.news
+
 .btn-more {
     @include transition(.3s,ease-in-out);
     border: 1px solid $black2;
@@ -257,6 +299,10 @@ body {
     width: 50%;
     &--big {
         width: 90%;
+    }
+    &--fleft {
+        float: left;
+        width: 50%;
     }
     &::before, &::after {
         background: rgba($black2, .3);

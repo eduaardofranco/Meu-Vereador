@@ -98,6 +98,7 @@ button {
   box-sizing: border-box; }
 
 body {
+  background: #f8f8f8;
   color: #2f2f2f;
   font-size: 14px;
   overflow-x: hidden;
@@ -255,7 +256,7 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #2f2f2f;
   font-size: 3em;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
   position: relative; }
   .title-page::before {
     background: rgba(0, 0, 0, 0.7);
@@ -267,18 +268,23 @@ body {
     height: 2px;
     width: 50px; }
 
+.title-sec {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 2%; }
+
 .list-vereadores {
   text-align: center; }
 
-.team-member {
+.item-vereador {
   display: inline-block;
   margin: 1.5%;
   width: 30%; }
-  .team-member:hover .team-member-image {
+  .item-vereador:hover .item-vereador__image {
     -webkit-filter: grayscale(40%);
     /* Safari */
     filter: grayscale(40%); }
-  .team-member-image {
+  .item-vereador__image {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -287,42 +293,69 @@ body {
     -webkit-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
     max-width: 100%; }
-  .team-member h2 {
+  .item-vereador__name {
     font-size: 1.2em;
     display: inline-block;
     margin-top: 10px;
     text-align: center; }
-  .team-member .job {
+  .item-vereador__party {
     display: inline-block;
     color: rgba(47, 47, 47, 0.6);
-    font-size: 1em; }
-  .team-member__projects {
+    font-size: .8em; }
+  .item-vereador__projects {
     margin-top: 10px; }
-  .team-member figure {
+  .item-vereador figure {
     overflow: hidden;
     text-align: center; }
 
 .vereador {
   position: relative; }
+  .vereador__email, .vereador__phone {
+    font-size: 1.1em;
+    margin-top: 3%; }
+    .vereador__email i, .vereador__phone i {
+      vertical-align: middle; }
   .vereador__img {
     max-width: 100%; }
   .vereador__left {
     float: left;
-    padding: 0 20px;
+    padding: 0 10px 10px 10px;
     text-align: center;
     width: 50%; }
-  .vereador__right {
+  .vereador__name {
     float: left;
-    padding: 0 20px;
-    position: relative;
     width: 50%; }
   .vereador__text::first-letter {
     font-size: 25px; }
-  .vereador__text p {
+  .vereador__text p,
+  .vereador__text div {
     font-size: 16px;
     line-height: 25px; }
-    .vereador__text p + p {
+    .vereador__text p + p,
+    .vereador__text p + div,
+    .vereador__text div + p,
+    .vereador__text div + div {
       margin-top: 3%; }
+
+.news {
+  clear: both;
+  padding-top: 3%; }
+  .news__list li {
+    padding-left: 25px;
+    position: relative; }
+    .news__list li i {
+      display: block;
+      font-size: 1.5em;
+      position: absolute;
+      top: 15%;
+      left: 0; }
+    .news__list li + li {
+      margin-top: 1.5%; }
+  .news__list strong {
+    display: block;
+    font-size: .9em;
+    font-weight: bold;
+    margin-bottom: 3px; }
 
 .btn-more {
   -webkit-transition: all 0.3s ease-in-out;
@@ -347,6 +380,9 @@ body {
   width: 50%; }
   .line--big {
     width: 90%; }
+  .line--fleft {
+    float: left;
+    width: 50%; }
   .line::before, .line::after {
     background: rgba(47, 47, 47, 0.3);
     content: '';

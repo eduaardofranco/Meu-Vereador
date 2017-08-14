@@ -8,21 +8,55 @@
 			<i class="icon-back"></i>
 			<a href="index.php">Voltar à página inicial</a>
 		</header>
-		<section id="alex" class="vereador">
+		<?php
+			require_once('phpQuery/phpQuery-onefile.php');
+			//load each vereador page
+			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$link = explode('=',$actual_link);
+			$url = $link[count($link) - 1];
+			$urlVereador = 'http://www.camarapf.rs.gov.br/' .$url;
+			$html = file_get_contents($urlVereador);
+			phpQuery::newDocumentHTML($html);
+
+		?>
+		<section class="vereador section">
+			<?php
+				$vereadorName = pq('.team-member-info h2')->text();
+				$img = pq('.team-member-image')->attr('src');
+				$title = pq('.team-member-image')->attr('alt');
+				$vereadorText = pq('.team-member-more');
+				pq('.team-member-more .justify')->remove();
+				$vereadorText = pq('.team-member-more')->attr('class', 'vereador__text');
+				$email = pq('.team-member-info .job')->eq(1)->text();
+				$phone = pq('.team-member-info .job')->eq(2)->text();
+				pq('.social-media')->remove();
+
+				// news
+				$amount = pq('.col-lg-6.col-md-6.col-sm-6 li')->length;
+				pq('.col-lg-6.col-md-6.col-sm-6 li')->prepend('<i class="icon-arrow"></i>');
+			?>
 			<div class="content clearfix">
 				<div class="vereador__left">
-					<img class="vereador__img" src="assets/images/vereadores/alex.jpg" alt="Foto: Alex">
+					<img class="vereador__img" src="<?php echo $img ?>" alt="<?php echo $title ?>" title="<?php echo $title ?>">
 				</div>
-				<div class="vereador__right">
-					<div class="desc">
-						<h3 class="vereador__name">Alex Necker</h3>
-						<div class="vereador__text">
-							<p>Alex Necker começou sua militância através do movimento estudantil secundarista em 1991 na Escola Estadual Cecy Leite Costa, foi um dos lideres do movimento fora Collor e em 1992 filia-se a União da Juventude Socialista – UJS, tendo sido da sua direção municipal e estadual. Foi da direção da União Municipal de Estudantes Secundarista – UMES e também militante atuante no movimento estudantil universitário na Universidade de Passo Fundo – UPF.</p>
-							<p>Ainda em 1992 filia-se ao Partido Comunista do Brasil – PCdoB, onde construiu uma trajetória de luta, são mais de 20 anos de militância politica e social, sendo atualmente  da sua direção municipal.</p>
-							<p>É graduado em direito pela UPF, foi assessor do Ver. Juliano Roso, Diretor Administrativo da Secretaria de Desporto e Cultura – SEDEC (2006-2007), Diretor do Hemocentro Regional de Passo Fundo – Hemopasso (2008-2010) e Secretario de Desporto e Cultura de Passo Fundo (2011).</p>
-						</div>
-					</div>
-					<div class="line line--big"><span></span><span></span><span></span></div>
+				<div class="desc">
+					<h3 class="vereador__name title-page"><?php echo $vereadorName ?></h3>
+					<?php echo $vereadorText ?>
+					<p class="vereador__email"><i class="icon-mail"></i><?php echo $email ?></p>
+					<p class="vereador__phone"><i class="icon-phone"></i><?php echo $phone ?></p>
+				</div>
+				<div class="line line--big line--fleft"><span></span><span></span><span></span></div>
+				<div class="news">
+					<h2 class="title-sec">Últimas Notícias</h2>
+					<ul class="news__list">
+						<?php for($i = 0; $i < $amount; $i++) { ?>
+							<?php
+								$newsDate = pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i);
+								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
+							?>
+							<?php echo $newsDate ?>
+						<?php } ?>
+					</ul>
 				</div>
 			</div>
 		</section>
