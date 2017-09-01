@@ -259,6 +259,15 @@ body {
         li {
             padding-left: 25px;
             position: relative;
+            float: left;
+            margin-top: 1.5%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 49%;
+            &:nth-child(even) {
+              float: right;
+            }
             i {
                 display: block;
                 font-size: 1.5em;
@@ -266,9 +275,9 @@ body {
                 top: 15%;
                 left: 0;
             }
-            &+ li{
-                margin-top: 1.5%;
-            }
+        }
+        a {
+          display: block;
         }
         strong {
             display: block;
@@ -278,6 +287,60 @@ body {
         }
     }//.newsList
 }//.news
+
+// página de notícias
+.noticia {
+  &__data {
+    font-size: 1em;
+    font-style: italic;
+  }
+  &__titulo {
+    font-size: 2em;
+    margin: .8% 0;
+  }
+  &__subtitulo {
+    font-size: 1.5em;
+    margin-bottom: 3%;
+  }
+  &__img {
+    float: left;
+    margin: 0 2% 2% 0;
+    width: 40%;
+  }
+    .col-lg-12.col-md-12.col-sm-12 {
+      p,
+      div {
+        font-size: 16px;
+        line-height: 23px;
+        margin-bottom: 1.5%;
+      }
+
+    }
+    .media-item {
+      float: left;
+      margin: 1%;
+      width: 22%;
+      img {
+        border-radius: 3px;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+    .media-item {
+      position: relative;
+      .media-hover a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+}//.noticia
+
+
 
 .btn-more {
     @include transition(.3s,ease-in-out);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-	 	<?php include 'includes/head.php'; ?>
+		<?php include 'includes/head.php'; ?>
 	</head>
 	<body>
 		<div class="cover-container">

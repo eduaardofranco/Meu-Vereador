@@ -4,20 +4,24 @@ $(document).ready(function() {
 
     $(anchor).click(function() {
         var section = $(this).attr('data-scroll');
-        console.log(section);
         $('html,body').animate({
-            scrollTop: $(section).offset().top},
-        'slow');
+                scrollTop: $(section).offset().top
+            },
+            'slow');
+    });
+    
+    $("[data-fancybox]").fancybox({
+    // Options will go here
     });
 
-});//ready
+}); //ready
 
 
 //header cover effect when scroll
 var cover = $('.cover-container__item');
 $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    if( scroll > 99) {
+    if (scroll > 99) {
         $(cover).addClass('opacity-cover');
     } else {
         $(cover).removeClass('opacity-cover');

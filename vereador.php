@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-	 	<?php include 'includes/head.php'; ?>
+		<?php include 'includes/head.php'; ?>
 	</head>
 	<body>
 		<header class="header">
 			<i class="icon-back"></i>
-			<a href="index.php">Voltar à página inicial</a>
+			<a href="index.php#vereadores-list">Voltar à página inicial</a>
 		</header>
 		<?php
 			require_once('phpQuery/phpQuery-onefile.php');
@@ -25,7 +25,6 @@
 				$img = pq('.team-member-image')->attr('src');
 				$title = pq('.team-member-image')->attr('alt');
 				$vereadorText = pq('.team-member-more');
-				pq('.team-member-more .justify')->remove();
 				$vereadorText = pq('.team-member-more')->attr('class', 'vereador__text');
 				$email = pq('.team-member-info .job')->eq(1)->text();
 				$phone = pq('.team-member-info .job')->eq(2)->text();
@@ -53,6 +52,16 @@
 							<?php
 								$newsDate = pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i);
 								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
+								//pega o href de cada notícia
+								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href');
+								//da um explode e transforma em um array
+								$href = explode('/',$href);
+								// pega os últimos dois valores do array
+								$href = array_slice($href, -2);
+								// da um implode pra juntar a string
+								$href = $comma_separated = implode("/", $href);
+								//joga a string pro href
+								pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href','noticia.php?=' .$href);
 							?>
 							<?php echo $newsDate ?>
 						<?php } ?>
