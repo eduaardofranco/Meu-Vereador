@@ -1,0 +1,23 @@
+@media (max-width: 900px) {
+  .content {
+    width: 95%;
+  }
+  .item-vereador {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .item-vereador {
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    width: 95%;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .title-page {
+    font-size: 20px;
+  }
+}

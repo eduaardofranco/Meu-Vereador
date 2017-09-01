@@ -42,7 +42,7 @@
 					<h3 class="vereador__name title-page"><?php echo $vereadorName ?></h3>
 					<?php echo $vereadorText ?>
 					<p class="vereador__email"><i class="icon-mail"></i><?php echo $email ?></p>
-					<p class="vereador__phone"><i class="icon-phone"></i><?php echo $phone ?></p>
+					<p class="vereador__phone"><i class="icon-phone"></i> (54)<?php echo $phone ?></p>
 				</div>
 				<div class="line line--big line--fleft"><span></span><span></span><span></span></div>
 				<div class="news">

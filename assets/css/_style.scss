@@ -60,7 +60,7 @@ body {
     background: rgba($black2, 1);
     color: rgba($white, .8);
     font-size: 1em;
-    padding: .5% 0;
+    padding: 7px 0;
     a{
         color: rgba($white, .8);
         text-decoration: underline;
@@ -188,6 +188,9 @@ body {
         .item-vereador__image {
             @include grayscale(40%);
         }
+    }
+    a {
+      display: block;
     }
     &__image {
         @include transition(.3s, ease-in-out);
