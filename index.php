@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-		<?php include 'includes/head.php'; ?>
+		<?php
+			ob_start();
+			include("includes/head.php");
+			$buffer=ob_get_contents();
+			ob_end_clean();
+
+			$buffer=str_replace("%TITLE%","Meu Vereador - Home",$buffer);
+			echo $buffer;
+		?>
 	</head>
 	<body>
 		<div class="cover-container">

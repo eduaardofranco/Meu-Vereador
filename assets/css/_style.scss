@@ -180,6 +180,9 @@ body {
 .list-vereadores {
     text-align: center;
 }
+#vereadores-list {
+  padding: 2% 0;
+}
 .item-vereador {
     display: inline-block;
     margin: 1.5%;
@@ -289,6 +292,12 @@ body {
             margin-bottom: 3px;
         }
     }//.newsList
+    .title-sec {
+      @extend .title-page;
+      font-size: 1.5em; 
+      padding: .5em 0;
+      
+    }
 }//.news
 
 // página de notícias

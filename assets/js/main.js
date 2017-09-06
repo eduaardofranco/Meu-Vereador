@@ -3,16 +3,14 @@ $(document).ready(function() {
     var anchor = $('.js-scroll');
 
     $(anchor).click(function() {
-        var section = $(this).attr('data-scroll');
-        $('html,body').animate({
-                scrollTop: $(section).offset().top
-            },
-            'slow');
+        scrollToSection();
     });
-    
-    $("[data-fancybox]").fancybox({
-    // Options will go here
-    });
+
+    //scroll to section when is not the home
+    if(! $('#vereadores-list').length ) {
+        scrollToSection();
+        console.log('true');
+    }
 
 }); //ready
 
@@ -27,3 +25,10 @@ $(window).scroll(function() {
         $(cover).removeClass('opacity-cover');
     }
 });
+
+function scrollToSection() {
+    $('html,body').animate({
+        scrollTop: $('.section').offset().top
+    },
+    'slow');
+}

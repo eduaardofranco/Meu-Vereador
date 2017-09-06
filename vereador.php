@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-		<?php include 'includes/head.php'; ?>
+		<?php
+			ob_start();
+			include("includes/head.php");
+		?>
 	</head>
 	<body>
-		<header class="header">
-			<i class="icon-back"></i>
-			<a href="index.php#vereadores-list">Voltar à página inicial</a>
-		</header>
+		<?php include 'includes/header.php' ?>
 		<?php
+			
+
 			require_once('phpQuery/phpQuery-onefile.php');
 			//load each vereador page
 			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -22,6 +24,14 @@
 		<section class="vereador section">
 			<?php
 				$vereadorName = pq('.team-member-info h2')->text();
+
+				//pega o nome do vereador e joga pro title da página
+				$buffer=ob_get_contents();
+				ob_end_clean();
+				$buffer=str_replace("%TITLE%","Meu Vereador - " .$vereadorName,$buffer);
+				echo $buffer;
+
+
 				$img = pq('.team-member-image')->attr('src');
 				$title = pq('.team-member-image')->attr('alt');
 				$vereadorText = pq('.team-member-more');
@@ -52,6 +62,8 @@
 							<?php
 								$newsDate = pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i);
 								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
+								//remove o target blank
+								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('target','');
 								//pega o href de cada notícia
 								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href');
 								//da um explode e transforma em um array

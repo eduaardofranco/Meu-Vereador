@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt">
 	<head>
-		<?php include 'includes/head.php'; ?>
+		<?php
+			ob_start();
+			include 'includes/head.php';
+		?>
 	</head>
 	<body>
-		<header class="header">
-			<i class="icon-back"></i>
-			<a href="index.php#vereadores-list">Voltar à página inicial</a>
-		</header>
-		
-		<section class="vereador section">
+		<?php include 'includes/header.php' ?>
+		<section id="main" class="vereador section">
 			<?php
 				require_once('phpQuery/phpQuery-onefile.php');
 				//load each vereador page
@@ -22,6 +21,14 @@
 			?>
 			<div class="noticia content clearfix">
 				<?php
+				//pega o nome da notícia e joga pro title da página
+				$titleNews = pq('h1:last')->text();
+				$subtitleNews = pq('h3:first')->text();
+				$buffer=ob_get_contents();
+				ob_end_clean();
+				$buffer=str_replace("%TITLE%","Notícias - " .$titleNews .' - ' .$subtitleNews,$buffer);
+				echo $buffer;
+				
 				//coloca class no titulo
 				pq('h1')->addClass('noticia__titulo');
 				//coloca class no subtitulo
@@ -49,5 +56,10 @@
 		<!--Javascript-->
 		<script src="assets/fancybox/jquery.fancybox.min.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("[data-fancybox]").fancybox();
+			});
+		</script>
 	</body>
 </html>
