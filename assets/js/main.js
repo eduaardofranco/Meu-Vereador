@@ -11,7 +11,27 @@ $(document).ready(function() {
         scrollToSection();
         console.log('true');
     }
+    var images = [
+        "cover.jpg",
+        "cover.jpg",
+        "cover.png",
+        "cover2.jpg"
+    ];
 
+    var capa = $('.cover-container__item');
+
+    var current = 0;
+
+    function teste() {
+        current = current + 1;
+        $(capa).css(
+            'background-image', 'url(assets/images/'+images[current]+')'
+        );
+        console.log(current);
+    }
+    setInterval(function() {
+        teste();
+    },3000)
 }); //ready
 
 
