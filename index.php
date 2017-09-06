@@ -12,12 +12,7 @@
 		?>
 	</head>
 	<body>
-		<div class="cover-container">
-			<div class="cover-container__item"></div>
-			<div class="cover-container__scroll js-scroll" data-scroll="#vereadores-list">
-				<i class="icon-scroll"></i>
-			</div>
-		</div>
+		<?php include 'includes/header.php' ?>
 		<section id="vereadores-list" class="section">
 			<?php
 				require_once('phpQuery/phpQuery-onefile.php');
