@@ -350,6 +350,26 @@ body {
   .projects .news__list i {
     font-size: 1.1em;
     top: 0; }
+  .projects__mais {
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 7px 7px 7px 7px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    background: #2f2f2f;
+    color: #ffffff !important;
+    display: block;
+    margin: 2% 0;
+    padding: .5em 0;
+    position: relative;
+    top: 0;
+    text-align: center;
+    width: 180px; }
+    .projects__mais:hover {
+      background: #000000;
+      top: 3px; }
 
 .news {
   padding-top: 3%; }
@@ -358,9 +378,6 @@ body {
     position: relative;
     float: left;
     margin-top: 1.5%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 49%; }
     .news__list li:nth-child(even) {
       float: right; }
@@ -371,7 +388,11 @@ body {
       top: 15%;
       left: 0; }
   .news__list a {
-    display: block; }
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%; }
   .news__list strong {
     display: block;
     font-size: .9em;
@@ -382,6 +403,7 @@ body {
     padding: .5em 0; }
 
 .noticia__data {
+  display: block;
   font-size: 1em;
   font-style: italic; }
 
@@ -486,6 +508,19 @@ body {
   .item-vereador {
     width: 45%; } }
 
+@media (max-width: 800px) {
+  .vereador__left {
+    float: none;
+    margin: 1% auto;
+    width: 80%; }
+  .vereador__name {
+    float: none; }
+  .news__list li {
+    margin-top: 3.5%;
+    width: 45%; }
+  .vereador .line {
+    width: 100%; } }
+
 @media (max-width: 600px) {
   .item-vereador {
     display: block;
@@ -496,4 +531,22 @@ body {
       display: block;
       margin: 0 auto; }
   .title-page, .projects .title-sec, .news .title-sec {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .news__list li {
+    float: none;
+    width: 90%; }
+    .news__list li:nth-child(even) {
+      float: none; }
+  .news {
+    margin: 4% 0; }
+  .news__list li {
+    margin-top: 7%; }
+  .noticia__data {
+    margin-top: 5%; }
+  .noticia__img {
+    width: 100%; }
+  .noticia__titulo, .noticia__subtitulo {
+    margin: 5% 0; }
+  .noticia .col-lg-12.col-md-12.col-sm-12 p,
+  .noticia .col-lg-12.col-md-12.col-sm-12 div {
+    margin-bottom: 5%; } }

@@ -5,7 +5,26 @@
   .item-vereador {
     width: 45%;
   }
-}
+}//900
+@media (max-width: 800px) {
+  .vereador__left {
+    float: none;
+    margin: 1% auto;
+    width: 80%;
+  }
+  .vereador__name {
+    float: none;
+  }
+  .news__list li {
+    margin-top: 3.5%;
+    width: 45%;
+  }
+  .vereador {
+    .line {
+      width: 100%;
+    }
+  }
+}//800
 @media (max-width: 600px) {
   .item-vereador {
     display: block;
@@ -20,4 +39,35 @@
   .title-page {
     font-size: 20px;
   }
-}
+  .news__list li {
+    float: none;
+    width: 90%;
+    &:nth-child(even) {
+      float: none;
+    }
+  }
+  .news {
+    margin: 4% 0;
+  }
+  .news__list li {
+    margin-top: 7%;
+  }
+  .noticia {
+    &__data {
+      margin-top: 5%;
+    }
+    &__img {
+      width: 100%;
+    }
+    &__titulo,
+    &__subtitulo {
+      margin: 5% 0;
+    }
+    .col-lg-12.col-md-12.col-sm-12 {
+    p,
+    div {
+        margin-bottom: 5%;
+      }
+    }
+  }
+}//600

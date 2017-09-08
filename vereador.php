@@ -68,6 +68,7 @@
 					<ul class="news__list clearfix">
 						<?php echo $projects ?>
 					</ul>
+					<a href="" class="projects__mais">Ver todos os Projetos</a>
 				</div><!--.projects-->
 
 
