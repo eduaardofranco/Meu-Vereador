@@ -257,8 +257,22 @@ body {
     }
 }//.vereador
 
+.projects {
+  clear: both;
+  .title-sec {
+    @extend .title-page;
+    font-size: 1.5em; 
+    padding: .5em 0;
+    
+  }
+  .news__list {
+    i {
+      font-size: 1.1em;
+      top: 0;
+    }
+  }
+}//.projects
 .news {
-    clear: both;
     padding-top: 3%;
     &__list {
         li {

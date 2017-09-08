@@ -18,7 +18,7 @@
 			$url = $link[count($link) - 1];
 			$urlVereador = 'http://www.camarapf.rs.gov.br/' .$url;
 			$html = file_get_contents($urlVereador);
-			phpQuery::newDocumentHTML($html);
+			phpQuery::newDocument($html);
 
 		?>
 		<section class="vereador section">
@@ -55,6 +55,22 @@
 					<p class="vereador__phone"><i class="icon-phone"></i> (54)<?php echo $phone ?></p>
 				</div>
 				<div class="line line--big line--fleft"><span></span><span></span><span></span></div>
+
+
+				<div class="projects">
+					<h2 class="title-sec">Projetos do Vereador</h2>
+					<?php 
+						$projects = pq('.col-lg-3.col-md-3.col-sm-3:first .menu li');
+						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->removeAttr('style');
+						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->prepend('<i class="icon-arrow"></i>');
+						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li a')->removeAttr('style');
+					?>
+					<ul class="news__list clearfix">
+						<?php echo $projects ?>
+					</ul>
+				</div><!--.projects-->
+
+
 				<div class="news">
 					<h2 class="title-sec">Últimas Notícias</h2>
 					<ul class="news__list">
@@ -78,8 +94,8 @@
 							<?php echo $newsDate ?>
 						<?php } ?>
 					</ul>
-				</div>
-			</div>
+				</div><!--.news-->
+			</div><!--.content-->
 		</section>
 		<?php include 'includes/footer.php' ?>
 

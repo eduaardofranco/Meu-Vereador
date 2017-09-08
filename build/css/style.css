@@ -252,13 +252,13 @@ body {
 .section {
   padding: 2% 0; }
 
-.title-page, .news .title-sec {
+.title-page, .projects .title-sec, .news .title-sec {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   color: #2f2f2f;
   font-size: 3em;
   margin-bottom: 3%;
   position: relative; }
-  .title-page::before, .news .title-sec::before {
+  .title-page::before, .projects .title-sec::before, .news .title-sec::before {
     background: rgba(0, 0, 0, 0.7);
     content: '';
     display: block;
@@ -342,8 +342,16 @@ body {
     .vereador__text div + div {
       margin-top: 3%; }
 
+.projects {
+  clear: both; }
+  .projects .title-sec {
+    font-size: 1.5em;
+    padding: .5em 0; }
+  .projects .news__list i {
+    font-size: 1.1em;
+    top: 0; }
+
 .news {
-  clear: both;
   padding-top: 3%; }
   .news__list li {
     padding-left: 25px;
@@ -487,5 +495,5 @@ body {
     .item-vereador img {
       display: block;
       margin: 0 auto; }
-  .title-page, .news .title-sec {
+  .title-page, .projects .title-sec, .news .title-sec {
     font-size: 20px; } }
