@@ -13,25 +13,38 @@ $(document).ready(function() {
     }
     var images = [
         "cover.jpg",
-        "cover.jpg",
         "cover.png",
         "cover2.jpg"
     ];
 
     var capa = $('.cover-container__item');
-
+    
+    //função pra trocar os banners
     var current = 0;
-
-    function teste() {
-        current = current + 1;
-        $(capa).css(
-            'background-image', 'url(assets/images/'+images[current]+')'
-        );
-        console.log(current);
+    function switchImages() {
+        // se o current for menor ou igual ao tamanho do array
+        if (current <= images.length) {
+            //se o item existir no array muda a imagem (diferente de undefined)
+            if(images[current]) {
+                $(capa).css(
+                    'background-image', 'url(assets/images/'+images[current]+')'
+                );
+                current += 1;
+                console.log(current);
+            } else {
+                //senão seta zero pro current e executa a função dnv
+                current = 0;
+                switchImages();
+            }
+        } else {
+            //senão seta zero pro current e executa a função dnv
+            current = 0;
+            switchImages();
+        }
     }
     setInterval(function() {
-        teste();
-    },3000)
+        switchImages();
+    },4000)
 }); //ready
 
 
