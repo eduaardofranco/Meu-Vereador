@@ -58,24 +58,30 @@
 
 
 				<div class="projects">
-					<h2 class="title-sec">Projetos do Vereador</h2>
 					<?php 
-						$projects = pq('.col-lg-3.col-md-3.col-sm-3:first .menu li');
-						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->removeAttr('style');
-						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->prepend('<i class="icon-arrow"></i>');
-						pq('.col-lg-3.col-md-3.col-sm-3:first .menu li a')->removeAttr('style');
+						$projectOrNot = pq('.col-lg-3.col-md-3.col-sm-3:first h3')->text();
+						$str = strtolower($projectOrNot);
+						if( $str === 'projetos do vereador') {
+						?>
+						<h2 class="title-sec">Projetos do Vereador</h2>
+						<?php
+							$projects = pq('.col-lg-3.col-md-3.col-sm-3:first .menu li');
+							pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->removeAttr('style');
+							pq('.col-lg-3.col-md-3.col-sm-3:first .menu li')->prepend('<i class="icon-arrow"></i>');
+							pq('.col-lg-3.col-md-3.col-sm-3:first .menu li a')->removeAttr('style');
 					?>
 					<ul class="news__list clearfix">
 						<?php echo $projects ?>
 					</ul>
-					<a href="" class="projects__mais">Ver todos os Projetos</a>
+					<a href="projetos.php?<?php echo $url ?>" class="projects__mais">Ver todos os Projetos</a>
+					<?php } ?>
 				</div><!--.projects-->
 
 
 				<div class="news">
 					<h2 class="title-sec">Últimas Notícias</h2>
 					<ul class="news__list">
-						<?php for($i = 0; $i < $amount; $i++) { ?>
+						<?php for($i = 0; $i <= $amount; $i++) { ?>
 							<?php
 								$newsDate = pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i);
 								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
