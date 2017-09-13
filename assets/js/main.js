@@ -62,12 +62,20 @@ $(window).scroll(function() {
 
 //scroll to section when laod page
 function scrollToSection() {
-    $('html,body').animate({
-        scrollTop: $('.section').offset().top - 38
-    },
+    if(! $('#vereadores-list').length ) {
+        $('html,body').animate({
+            scrollTop: $('.section').offset().top - 38
+        },
     'slow');
+    } else {
+        $('html,body').animate({
+            scrollTop: $('.section').offset().top
+        },
+    'slow');
+    }
 }
 
+//menu fixed when scroll is trigger
 var menu = $('.menu');
 var  windowH = $(window).height();
 $(window).scroll(function() {
