@@ -10,6 +10,7 @@ $(document).ready(function() {
     if(! $('#vereadores-list').length ) {
         scrollToSection();
     }
+    //images array from banner
     var images = [
         "cidade.jpg",
         "porto-alegre.jpg",
@@ -19,29 +20,29 @@ $(document).ready(function() {
 
     var capa = $('.cover-container__item');
 
-    //current começa com 1 pq a primeira imagem foi setada inline
+    //start with 1 because the first image is defined inline
     var current = 1;
-    //função pra trocar os banners
+    //function that switch banner images 
     function switchImages() {
-        // se o current for menor ou igual ao tamanho do array
+        // if current is smaller or equal a length array
         if (current <= images.length) {
-            //se o item existir no array muda a imagem (diferente de undefined)
+            //if item exist in array change the image (diferent the undefined)
             if(images[current]) {
                 $(capa).css(
                     'background-image', 'url(assets/images/'+images[current]+')'
                 );
                 current += 1;
             } else {
-                //senão seta zero pro current e executa a função dnv
+                //if no set zero for current and exucute the function again
                 current = 0;
                 switchImages();
             }
         } else {
-            //senão seta zero pro current e executa a função dnv
+            //if no set zero for current and exucute the function again
             current = 0;
             switchImages();
         }
-    };
+    }
     setInterval(function() {
         switchImages();
     },4000)
@@ -59,9 +60,21 @@ $(window).scroll(function() {
     }
 });
 
+//scroll to section when laod page
 function scrollToSection() {
     $('html,body').animate({
-        scrollTop: $('.section').offset().top
+        scrollTop: $('.section').offset().top - 38
     },
     'slow');
 }
+
+var menu = $('.menu');
+var  windowH = $(window).height();
+$(window).scroll(function() {
+    var windowScroll = $(window).scrollTop(); 
+    if(windowScroll > windowH) {
+        $(menu).addClass('menu--fixed');
+    } else {
+        $(menu).removeClass('menu--fixed');
+    }
+});

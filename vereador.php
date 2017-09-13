@@ -7,17 +7,26 @@
 		?>
 	</head>
 	<body>
+		<!-- cover container -->
 		<?php include 'includes/header.php' ?>
+		<!-- menu -->
+		<?php include 'includes/menu.php' ?>
+		
 		<?php
 			
-
+			//load phpQuery
 			require_once('phpQuery/phpQuery-onefile.php');
-			//load each vereador page
+			//gets url
 			$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			//explode url after '='
 			$link = explode('=',$actual_link);
+			//gets the last value from string (this value is the name of councilman)
 			$url = $link[count($link) - 1];
+			//concat url with the name of councilman
 			$urlVereador = 'http://www.camarapf.rs.gov.br/' .$url;
+			//load page from site http://www.camarapf.rs.gov.br/councilmanName
 			$html = file_get_contents($urlVereador);
+			//create a new document with ths date
 			phpQuery::newDocument($html);
 
 		?>
@@ -25,7 +34,7 @@
 			<?php
 				$vereadorName = pq('.team-member-info h2')->text();
 
-				//pega o nome do vereador e joga pro title da página
+				//get the councilman name and set to page title
 				$buffer=ob_get_contents();
 				ob_end_clean();
 				$buffer=str_replace("%TITLE%","Meu Vereador - " .$vereadorName,$buffer);
@@ -54,15 +63,15 @@
 					<p class="vereador__email"><i class="icon-mail"></i><?php echo $email ?></p>
 					<p class="vereador__phone"><i class="icon-phone"></i> (54)<?php echo $phone ?></p>
 				</div>
-				<div class="line line--big line--fleft"><span></span><span></span><span></span></div>
 
-
-				<div class="projects">
+					<!--if councilman have minumum 1 project show the projects -->
 					<?php 
 						$projectOrNot = pq('.col-lg-3.col-md-3.col-sm-3:first h3')->text();
 						$str = strtolower($projectOrNot);
 						if( $str === 'projetos do vereador') {
 						?>
+						<div class="line line--big line--fleft"><span></span><span></span><span></span></div>
+						<div class="projects">
 						<h2 class="title-sec">Projetos do Vereador</h2>
 						<?php
 							$projects = pq('.col-lg-3.col-md-3.col-sm-3:first .menu li');
@@ -74,8 +83,8 @@
 						<?php echo $projects ?>
 					</ul>
 					<a href="projetos.php?<?php echo $url ?>" class="projects__mais">Ver todos os Projetos</a>
+					</div><!--.projects-->
 					<?php } ?>
-				</div><!--.projects-->
 
 
 				<div class="news">
@@ -85,17 +94,17 @@
 							<?php
 								$newsDate = pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i);
 								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
-								//remove o target blank
+								//remove the target blank
 								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('target','');
-								//pega o href de cada notícia
+								//get href from each news
 								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href');
-								//da um explode e transforma em um array
+								//explode and transform in a array
 								$href = explode('/',$href);
-								// pega os últimos dois valores do array
+								// get the lasts 2 values from array
 								$href = array_slice($href, -2);
-								// da um implode pra juntar a string
+								// implode for gather the 2 values
 								$href = $comma_separated = implode("/", $href);
-								//joga a string pro href
+								//throw the string to href
 								pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href','noticia.php?=' .$href);
 							?>
 							<?php echo $newsDate ?>

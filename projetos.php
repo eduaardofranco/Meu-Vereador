@@ -7,7 +7,11 @@
 		?>
 	</head>
 	<body>
+		<!-- cover container -->
 		<?php include 'includes/header.php' ?>
+		<!-- menu -->
+		<?php include 'includes/menu.php' ?>
+		
 		<?php
 			
 

@@ -7,7 +7,11 @@
 		?>
 	</head>
 	<body>
+		<!-- cover container -->
 		<?php include 'includes/header.php' ?>
+		<!-- menu -->
+		<?php include 'includes/menu.php' ?>
+		
 		<section id="main" class="vereador section">
 			<?php
 				require_once('phpQuery/phpQuery-onefile.php');
