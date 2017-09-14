@@ -96,13 +96,13 @@
 								pq('.col-lg-6.col-md-6.col-sm-6 li')->eq($i)->removeAttr('style');
 								//remove the target blank
 								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('target','');
-								//get href from each news
+								//gets href from each news
 								$href = pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href');
 								//explode and transform in a array
 								$href = explode('/',$href);
-								// get the lasts 2 values from array
+								// gets the lasts values from array
 								$href = array_slice($href, -2);
-								// implode for gather the 2 values
+								// implode for gather the values
 								$href = $comma_separated = implode("/", $href);
 								//throw the string to href
 								pq('.col-lg-6.col-md-6.col-sm-6 li a')->eq($i)->attr('href','noticia.php?=' .$href);

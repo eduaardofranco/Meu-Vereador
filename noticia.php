@@ -25,7 +25,7 @@
 			?>
 			<div class="noticia content clearfix">
 				<?php
-				//pega o nome da notícia e joga pro title da página
+				//gets news name and throw to the page title
 				$titleNews = pq('h1:last')->text();
 				$subtitleNews = pq('h3:first')->text();
 				$buffer=ob_get_contents();
@@ -33,21 +33,21 @@
 				$buffer=str_replace("%TITLE%","Notícias - " .$titleNews .' - ' .$subtitleNews,$buffer);
 				echo $buffer;
 				
-				//coloca class no titulo
+				//put class in title
 				pq('h1')->addClass('noticia__titulo');
-				//coloca class no subtitulo
+				//put class in subtitle
 				pq('h3')->addClass('noticia__subtitulo');
-				//pega a data
+				//gtes the date
 				$date = pq('.post-meta span')->text();
-				//imagem remove e adiciona atributos
+				//image switch atributes
 				pq('.align-left')->attr('class','noticia__img');
 				//remove animateScroll
 				pq('.animate-onscroll.justify')->remove();
 				//remove data
 				pq('.post-meta')->remove();
-				//conteudo
+				//content
 				$da = pq('.col-lg-12.col-md-12.col-sm-12:first');
-				//coloca  o data do fancybox
+				//put fancybox date
 				pq('a.jackbox ')->attr('data-fancybox','gallery');
 				
 				?>
