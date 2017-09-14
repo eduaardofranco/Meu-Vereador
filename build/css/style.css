@@ -319,7 +319,7 @@ body {
     max-width: 100%; }
   .item-vereador__name {
     font-size: 1.2em;
-    display: inline-block;
+    display: block;
     margin-top: 10px;
     text-align: center; }
   .item-vereador__party {

@@ -12,10 +12,8 @@ $(document).ready(function() {
     }
     //images array from banner
     var images = [
-        "cidade.jpg",
-        "porto-alegre.jpg",
-        "cidade2.jpg",
-        "porto-alegre2.jpg"
+        "2.jpg",
+        "3.jpg"
     ];
 
     var capa = $('.cover-container__item');
