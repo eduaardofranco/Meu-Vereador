@@ -12,6 +12,7 @@ $(document).ready(function() {
     }
     //images array from banner
     var images = [
+        "1.jpg",
         "2.jpg",
         "3.jpg"
     ];
@@ -53,8 +54,10 @@ $(window).scroll(function() {
     var scroll = $(window).scrollTop();
     if (scroll > 99) {
         $(cover).addClass('opacity-cover');
+        $(cover).css('background-position-y', -(scroll += scroll)/5+'px');
     } else {
         $(cover).removeClass('opacity-cover');
+        $(cover).css('background-position-y', 'center');
     }
 });
 
