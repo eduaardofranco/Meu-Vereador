@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  RewriteRule ^home/?$ /index.php [NC,L]
+    RewriteEngine On
+    RewriteBase /vereadores/
+    
+    RewriteRule ^home?$ index.php [NC,L]
 </IfModule>
