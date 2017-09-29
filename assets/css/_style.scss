@@ -92,19 +92,17 @@ body {
     height: 100vh;
     width: 100vw;
     &__title {
-        @extend .peace-font;
+        @extend .porto-font;
+        @include translate(-50%,-50%);
         color: $white;
         display: block;
-        font-size: 4em;
-        padding: 10% 0 0 5%;
-        text-shadow: 3px 3px 3px rgba(0,0,0, 1);
-        &::after{
-            background: url(#{$images}man.png) no-repeat center;
-            content: '';
-            display: inline-block;
-            height: 129px;
-            width: 40px;
-        };
+        font-size: 3em;
+        left: 50%;
+        letter-spacing: 5px;
+        position: absolute;
+        text-shadow: 3px 3px 3px rgba(0,0,0, .7);
+        top: 50%;
+        text-transform: uppercase;
     }
     &__item {
         @include scale(1.1);
@@ -141,7 +139,7 @@ body {
             height: 100%;
             width: 100%;
         }
-    }
+    }//_item
 }//cover end
 
 .cover-container__scroll {
